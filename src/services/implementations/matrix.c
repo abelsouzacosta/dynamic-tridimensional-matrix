@@ -7,7 +7,7 @@ int ***create_matrix(int slices, int rows, int columns) {
   int ***matrix = calloc(slices, sizeof(int **));
 
   if (matrix == NULL) {
-    throw_error("Matrix not created -> Memory allocation failed!");\
+    throw_error("Matrix not created -> Memory allocation failed!");
     exit(EXIT_FAILURE);
   }
 
@@ -59,4 +59,17 @@ void print_matrix(int ***matrix, int slices, int rows, int columns) {
       write_console("]\n");
     }
   }
+}
+
+void terminate_matrix(int ***matrix, int slices, int rows) {
+  for (int s = 0; s < slices; s += 1) {
+    for (int r = 0; r < rows; r += 1) {
+      callout("Deallocating memory at matrix[%d][%d]\n", s, r);
+      free(matrix[s][r]);
+    }
+    callout("Deallocating memory at matrix[%d]\n", s);
+    free(matrix[s]);
+  }
+  callout("Memory deallocation finished\n");
+  free(matrix);
 }

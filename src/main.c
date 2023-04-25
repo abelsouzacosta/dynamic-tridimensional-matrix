@@ -15,5 +15,7 @@ int main() {
 
   print_matrix(matrix, SLICES, ROWS, COLUMNS);
 
+  terminate_matrix(matrix, SLICES, ROWS);
+
   return 0;
 }
