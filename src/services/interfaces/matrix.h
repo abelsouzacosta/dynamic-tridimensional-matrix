@@ -1,4 +1,4 @@
-#ifdef MATRIX_H
+#ifndef MATRIX_H
 #define MATRIX_H
 
 int ***create_matrix(int slices, int rows, int columns);

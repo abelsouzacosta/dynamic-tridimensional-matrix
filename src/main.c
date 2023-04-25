@@ -6,7 +6,7 @@ int main() {
 
   callout("Initializing app");
 
-  int matrix = create_matrix(2, 2, 2);
+  int ***matrix = create_matrix(2, 2, 2);
 
   return 0;
 }
