@@ -7,7 +7,8 @@ int ***create_matrix(int slices, int rows, int columns) {
   int ***matrix = calloc(slices, sizeof(int **));
 
   if (matrix == NULL) {
-    throw_error("Matrix not created -> Memory allocation failed!");
+    throw_error("Matrix not created -> Memory allocation failed!");\
+    exit(EXIT_FAILURE);
   }
 
   for (int s = 0; s < slices; s += 1) {
@@ -49,7 +50,7 @@ void print_matrix(int ***matrix, int slices, int rows, int columns) {
       if (r != rows - 1) {
         write_console("],");
       } else {
-        write_console("]\n");
+        write_console("]");
       }
     }
     if (s != slices - 1) {

@@ -1,12 +1,19 @@
 #include "./infra/interfaces/console.h"
 #include "./services/interfaces/matrix.h"
+#define SLICES 2
+#define ROWS 3
+#define COLUMNS 3
 
 int main() {
   clear_screen();
 
-  callout("Initializing app");
+  int ***matrix = create_matrix(SLICES, ROWS, COLUMNS);
 
-  int ***matrix = create_matrix(2, 2, 2);
+  fill_matrix(matrix, SLICES, ROWS, COLUMNS);
+
+  clear_screen();
+
+  print_matrix(matrix, SLICES, ROWS, COLUMNS);
 
   return 0;
 }
